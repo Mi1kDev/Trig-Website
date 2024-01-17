@@ -90,7 +90,7 @@ window.addEventListener("load", e=>{
         button5Name = document.createTextNode("Register")
     }
 
-    if(window.localtion.pathname.split("/").pop() == "index.html"){
+    if(window.location.pathname.split("/").pop() == "index.html"){
         link1.href = "./html/index.html"
         link2.href = "./html/game.html"
         link3.href = "./html/leaderboard.html"

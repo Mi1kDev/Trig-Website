@@ -31,7 +31,7 @@ window.addEventListener("load", ()=>{
     let a3 = document.createElement("a")
     a3.href = "https://www.linkedin.com/"
 
-    if(window.localtion.pathname.split("/").pop() == "index.html"){
+    if(window.location.pathname.split("/").pop() == "index.html"){
         github.src = "./image/github.png"
         youtube.src = "./image/youtube.png"
         linkedin.src = "./image/linkedin.png"
