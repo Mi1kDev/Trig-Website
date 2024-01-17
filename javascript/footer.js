@@ -32,7 +32,7 @@ window.addEventListener("load", ()=>{
     a3.href = "https://www.linkedin.com/"
 
     iname = window.location.pathname.split("/")
-    if(iname[iname.length - 2] == "index.html"){
+    if(iname[iname.length - 2] == "index.html" || iname[iname.length - 2] == "webtrig"){
         github.src = "./image/github.png"
         youtube.src = "./image/youtube.png"
         linkedin.src = "./image/linkedin.png"
