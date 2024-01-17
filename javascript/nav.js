@@ -17,7 +17,7 @@ window.addEventListener("load", e=>{
 
     let link1 = document.createElement("a")
     link1.className = "linkless"
-    link1.href = "../index.html"
+    link1.href = "../html/home.html"
     let link2 = document.createElement("a")
     link2.className = "linkless"
     link2.href = "../html/game.html"
