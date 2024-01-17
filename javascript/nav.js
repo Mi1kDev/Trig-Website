@@ -17,7 +17,7 @@ window.addEventListener("load", e=>{
 
     let link1 = document.createElement("a")
     link1.className = "linkless"
-    link1.href = "../html/home.html"
+    link1.href = "../html/index.html"
     let link2 = document.createElement("a")
     link2.className = "linkless"
     link2.href = "../html/game.html"
@@ -88,6 +88,19 @@ window.addEventListener("load", e=>{
     if(!signedIn){
         button4Name = document.createTextNode("Login")
         button5Name = document.createTextNode("Register")
+    }
+
+    if(window.localtion.pathname.split("/").pop() == "index.html"){
+        link1.href = "./html/index.html"
+        link2.href = "./html/game.html"
+        link3.href = "./html/leaderboard.html"
+
+        if(!signedIn){
+            link4.href="./html/login.html"
+            link5.href="./html/register.html"
+        }else{
+            
+        }
     }
 
     button1.appendChild(button1Name)

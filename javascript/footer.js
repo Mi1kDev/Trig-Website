@@ -6,15 +6,15 @@ window.addEventListener("load", ()=>{
     let footerIconBar = document.createElement("div")
     footerIconBar.className = "footer-icon-bar"
     let github = document.createElement("img")
-    github.src = "./image/github.png"
+    github.src = "../image/github.png"
     github.alt = "Github"
     github.className = "iconButton"
     let youtube = document.createElement("img")
-    youtube.src = "./image/youtube.png"
+    youtube.src = "../image/youtube.png"
     youtube.alt = "Youtube"
     youtube.className = "iconButton"
     let linkedin = document.createElement("img")
-    linkedin.src = "./image/linkedin.png"
+    linkedin.src = "../image/linkedin.png"
     linkedin.alt = "LinkedIn"
     linkedin.className = "iconButton"
 
@@ -30,6 +30,12 @@ window.addEventListener("load", ()=>{
     
     let a3 = document.createElement("a")
     a3.href = "https://www.linkedin.com/"
+
+    if(window.localtion.pathname.split("/").pop() == "index.html"){
+        github.src = "./image/github.png"
+        youtube.src = "./image/youtube.png"
+        linkedin.src = "./image/linkedin.png"
+    }
 
     a1.appendChild(github)
     a2.appendChild(youtube)
