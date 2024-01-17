@@ -6,7 +6,7 @@ window.addEventListener("load", e=>{
     let logo = document.createElement("img")
     logo.id = "logo"
     logo.alt = "logo"
-    logo.src = "./image/Logo.png"
+    logo.src = "../image/Logo.png"
     navbar.appendChild(logo)
     let whiteRect = document.createElement("div")
     whiteRect.id = "whiteRect"
@@ -89,11 +89,12 @@ window.addEventListener("load", e=>{
         button4Name = document.createTextNode("Login")
         button5Name = document.createTextNode("Register")
     }
-
+    console.log(window.location.pathname.split("/").pop())
     if(window.location.pathname.split("/").pop() == "index.html"){
         link1.href = "./html/index.html"
         link2.href = "./html/game.html"
         link3.href = "./html/leaderboard.html"
+        logo.src = "./image/Logo.png"
 
         if(!signedIn){
             link4.href="./html/login.html"
