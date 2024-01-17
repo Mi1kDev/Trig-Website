@@ -2,7 +2,7 @@
 var signedIn = localStorage.getItem("signedIn")
 if(signedIn){
     // if the user is signed in and attempting to access the login page then they are redirected to the home page
-    window.location.replace("./home.html")
+    window.location.replace("../index.html")
 }
 
 // intializes the verified states of username and password verification
@@ -73,7 +73,7 @@ function login(){
                         email: usersData[userInfo[1]].email
                     }
                     localStorage.setItem("signedIn", JSON.stringify(signedIn))
-                    window.location.replace("./home.html")
+                    window.location.replace("../index.html")
                 }else{
                     // if the passwords do not match then an error mesage is displayed
                     let usernameError = document.getElementsByClassName("user")[0]

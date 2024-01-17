@@ -2,7 +2,7 @@
 var signedIn = localStorage.getItem("signedIn")
 if(signedIn){
     // if the user is signed in and attempting to access the register page, then they are redirected to the home page
-    window.location.replace("./home.html")
+    window.location.replace("../index.html")
 }
 // initializes the verification booleans
 let emailVerified = false
@@ -269,7 +269,7 @@ function submit(){
             }
             localStorage.setItem("signedIn", JSON.stringify(signedIn))
             // the user is redirected to the home page after being signed in
-            window.location.replace("./home.html")
+            window.location.replace("../index.html")
         }      
     }else{
         let button = document.getElementsByClassName("registerButton")[0]
