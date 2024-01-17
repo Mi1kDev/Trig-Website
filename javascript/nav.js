@@ -6,7 +6,7 @@ window.addEventListener("load", e=>{
     let logo = document.createElement("img")
     logo.id = "logo"
     logo.alt = "logo"
-    logo.src = "../image/Logo.png"
+    logo.src = "./image/Logo.png"
     navbar.appendChild(logo)
     let whiteRect = document.createElement("div")
     whiteRect.id = "whiteRect"
