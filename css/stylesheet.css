@@ -1,0 +1,930 @@
+/* applying styles to content which is uniform throughout the website. */
+/* Initializing various fonts */
+*{
+    margin: 0;
+}
+@font-face {
+    font-family: "Nasalization";
+    src: url(../fonts/nasalization-rg.ttf);
+}
+@font-face {
+    font-family: "VT23";
+    src: url(../fonts/vt23-normal.ttf);
+}
+/* Creating subclasses that can be used to style text content and avoid repetition */
+.title-text{
+    font-family: "Nasalization";
+    color: white;
+    font-size: 2em;
+}
+.terminal-text{
+    font-family: "VT23";
+    color: green;
+    font-size: 0.4em;
+    text-shadow: 0 0 0.4em lime;
+}
+.paragraph-text{
+    font-family: "Nasalization";
+    color: white;
+    font-size: 0.9em;
+}
+/* Creating more general use sub classes */
+.typewriter{
+    border-right: 5px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    animation: 
+        typing 2s,
+        cursor .4s step-end infinite alternate;
+}
+@keyframes cursor {
+    50% {border-color: transparent}
+}
+@keyframes typing {
+    from {width: 0}
+}
+.blink{
+    border: solid white 1px;
+    animation:
+        blinking 0.8s step-end infinite alternate;
+}
+@keyframes blinking{
+    50% {border-color: transparent;}
+}
+.reveal{
+    position: relative;
+    top: 150px;
+    opacity: 0;
+    transition: all 1s ease;
+}
+.reveal.active{
+    top: 0px;
+    opacity: 1;
+}
+.pop{
+    position: relative;
+    transform: scale(0, 0);
+    transition: 0.6s ease;
+}
+.pop.active{
+    transform: scale(1, 1);
+}
+.shaking{
+    animation:
+        shake 0.5s;
+}
+@keyframes shake{
+    0% {transform: translateX(0px);}
+    25% {transform: translateX(-30px);}
+    50% {transform: translateX(30px);}
+    100% {transform: translateX(0px);}
+}
+.shaking-relative{
+    animation:
+        shake-relative 0.5s;
+}
+@keyframes shake-relative{
+    0% {transform: translateX(0%);}
+    25% {transform: translateX(-5%);}
+    50% {transform: translateX(5%);}
+    100% {transform: translateX(0%);}
+}
+.button{
+    background-color: black;
+    border: solid 1px white;
+    color: white;
+}
+.linkless{
+    text-decoration: none;
+}
+/* Navigation Bar Styling */
+.navbar{
+    background-color: black;
+    display: flex;
+    height: 10vh;
+    width: 100%;
+    user-select: none;
+    border-bottom: solid 1px white;
+}
+.nav-text{
+    color: black;
+    font-family: "Nasalization";
+    font-size: 0.8em;
+}
+.navButton{
+    color: black;
+    background-color: white;
+    height:40px;
+    width:55px;
+    text-align: center;
+    line-height: 40px;
+    transition: 0.2s ease-in-out;
+    position: relative;
+    top: -8.875px;
+}
+.navProfile{
+    width: 100px;
+    text-align: center;
+    font-size: 0.8em;
+    text-overflow: ellipsis;
+}
+.nav-dropdown{
+    position: relative;
+}
+.nav-dropdown:hover .nav-dropdown-content{
+    display: block;
+}
+.nav-dropdown:hover .navProfile{
+    background-color: gray;
+    color: white;
+}
+.nav-dropdown-content{
+    top: 30px;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    background-color: white;
+    color: black;
+    font-family: "Nasalization";
+    transition: 
+        background-color 0.2s ease-in-out,
+        color 0.2s ease-in-out;
+}
+.nav-dropdown-content a{
+    text-decoration: none;
+    color: black;
+}
+.nav-dropdown-content div:hover{
+    background-color: rgb(200, 200, 200);
+    transition: 
+        background-color 0.2s ease-in-out,
+        color 0.2s ease-in-out;
+
+}
+#whiteRect{
+    background-color: white;
+    height: 20px;
+    width: 93%;
+    margin-top: 4vh;
+    margin-right: 1vw;
+    display: flex;
+}
+.navMainPages{
+    width: 50%;
+    display: flex;
+    gap: 2%;
+}
+.navRegistration{
+    width: 50%;
+    display: flex;
+    gap: 2%;
+    justify-content: end;
+}
+.linkless{
+    text-decoration: none;
+}
+.linkless:hover .navButton{
+    transform: scale(1.5);
+    transition: 0.2s ease-in-out;
+}
+#logo{
+    height: inherit;
+}
+/* Styling for the footer */
+.footer{
+    width: 100%;
+    display: flex;
+    background-color: black;
+    border-top: solid white 1px;
+    height: 8vh;
+}
+.footer-icon-bar{
+    width: 100%;
+    height: inherit;
+    display: flex;
+    justify-content: end;
+}
+.footerText{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 2vw;
+}
+.iconButton{
+    height: 100%;
+}
+/* Styling for the main sections which are prevalent on every page */
+body{
+    width: 100%;
+    background-color: rgb(18, 18, 18);
+    /* min-height: max-content; */
+    display: flex;
+    flex-direction: column;
+}
+body.home{
+    min-height: 350vh;
+}
+.mainSection{
+    width: 100%;
+    background-color: inherit;
+    height: 100%;
+    flex: 1;
+}
+.backgroundImg{
+    background-position: center center;
+    background-attachment: fixed;
+    background-image: url(../image/Background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.error{
+    color: red;
+}
+/* Styling for the home page */
+#trailerBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#trailer{
+    width:  60%;
+    height: 40vw;
+}
+.trailerTitleContainerWrapper{
+    display: flex;
+    justify-content: center;
+}
+.trailerTitleContainer{
+    display: inline-block;
+}
+.trailerTitle{
+    transition: 0.3s ease-in-out;
+}
+.trailerTitle.typewriter{
+    animation:
+        typing 2s steps(18),
+        cursor .4s step-end infinite alternate
+}
+.panel{
+    display: flex;
+    background-color: black;
+    border: solid white 1px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+}
+.panel-image{
+    width: 50%;
+    border: solid 1px white;
+}
+.panelText{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    font: 2em;
+    font-family: "Nasalization";
+    color: white;
+    text-shadow: 0 0 0.1em white;
+}
+.playGameWrapper{
+    text-decoration: none;
+}
+.playGame{
+    width: 80%;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 0 0.1em white;
+    user-select: none;
+}
+.playGame.button:hover{
+    background-color: white;
+    color: black;
+    text-shadow: 0 0 0.1em black;
+    transition: 0.2s ease-in-out;
+}
+/* Styling for Game Page */
+.gameSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.gamePanel{
+    display: flex;
+    height: 720px;
+    width: 1324px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%
+}
+.game-menu-manager{
+    background-color: black;
+    width: 300px;
+    height: 100%;
+    border-top: solid 1px white;
+    border-bottom: solid 1px white;
+    border-right: solid 1px white;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.game-menu-manager-panel{
+    border: solid 1px white;
+    font-family: "VT23";
+    display: flex;
+    margin-bottom: 5%;
+    transition: 0.2s ease-in-out;
+}
+.game-menu-manager-panel:hover{
+    color: white;
+    background-color: lime;
+    transition: 0.2s ease-in-out;
+}
+.game-menu-manager-panel.locked{
+    background-color: gray;
+    color: black
+}
+.game-menu-manager-panel.locked:hover{
+    
+}
+.game-menu-display-money{
+    color: white;
+    border: solid 1px white;
+    width: 100%;
+    font-size: 1.6em;
+    font-family: "VT23";
+}
+.game-menu-manager-panel-level{
+    user-select: none;
+    background-color: white;
+    color: black;
+    width: 25%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-bottom: black 1px solid;
+}
+.game-menu-manager-panel-item{
+    user-select: none;
+    color: white;
+    width: 25%;
+    text-align: center;
+    line-height: 50px;
+    text-overflow: ellipsis;
+}
+.game-menu-manager-panel-cost{
+    user-select: none;
+    color: white;
+    border-left: solid 1px white;
+    width: 50%;
+    text-align: right;
+    line-height: 50px;
+    text-overflow: ellipsis;
+}
+#game{
+    background-color: black;
+    border: solid white 1px;
+}
+.descriptionContent{
+    margin-top: 2.5%;
+    width: 75%;
+    background-color: black;
+    border: solid 1px white;
+}
+#gameControls{
+    width: 100%;
+}
+.how-to-play{
+    width: 100%;
+    display: flex;
+    margin-left: 12.45%;
+    margin-top: 1%;
+}
+.how-to-play div.key{
+    font-family: "Nasalization";
+    font-size: 2em;
+    line-height: 2em;
+    background-color: black;
+    color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border: solid 1px white;
+    transition: 0.2s ease-in-out;
+    user-select: none;
+}
+.how-to-play div.key:hover{
+    background-color: white;
+    color: black;
+    border-color: black;
+    transition: 0.2s ease-in-out;
+}
+#mouse{
+    height: 50px;
+    border: solid 1px white;
+    background-color: black;
+    user-select: none;
+}
+#space{
+    margin-left: 12.45%;
+    background-color: black;
+    border: solid 1px white;
+    font-family: "Nasalization";
+    font-size: 2em;
+    color: white;
+    width: 256.5px;
+    height: 50px;
+    text-align: center;
+    line-height: 2em;
+    transition: 0.2s ease-in-out;
+    user-select: none;
+}
+#space:hover{
+    background-color: white;
+    color: black;
+    transition: 0.2s ease-in-out;
+}
+.commentSection{
+    width: 75%;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+#commentArea{
+    width: 80%;
+    display: flex;
+}
+.commentBar{
+    font-family: "VT23";
+    font-size: 1em;
+    background-color: black;
+    color: green;
+    text-shadow: 0 0 0.1em green;
+    width: 90%;
+    height: 30px;
+    resize: none;
+}
+.postButton{
+    height: 30px;
+    text-align: center;
+    width: 10%;
+    font-family: "Nasalization";
+    font-size: 1em;
+    line-height: 30px;
+    transition: 0.2 ease-in-out;
+}
+#commentPost.postButton:hover{
+    background-color: white;
+    color: black;
+    border-color: white;
+    transition: 0.2s ease-in-out
+}
+#loadedComments{
+    height: 50vh;
+    width: 79.85%;
+    background-color: black;
+    border: solid 1px white;
+    overflow: auto;
+    margin-bottom: 5%;
+}
+.comment{
+    color: green;
+    font-family: "VT23";
+    font-size: 1em;
+}
+.sprite-hidden{
+    display: none;
+}
+/* Styling Section for Login Page */
+body.login{
+    min-height: 100vh;
+}
+.loginForm{
+    background-color: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border: solid white 1px;
+}
+.inputForm{
+    width: 100%;
+}
+.loginUsername{
+    display: flex;
+    margin-top: 11%;
+    margin-left: 10%;
+}
+.loginPassword{
+    margin-top: 3%;
+    display: flex;
+    margin-left: 10%;
+}
+.buttonHeader{
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    font-family: "Nasalization";
+    font-size: 0.8em;
+    line-height: 112px;
+    text-align: center;
+    color: lime;
+    border: solid 1px white;
+    border-right: none;
+}
+.dataInput{
+    background-color: black;
+    border: solid 1px white;
+    width: 90%;
+    margin-right: 10%;
+}
+.dataInput.terminal-text{
+    font-size: 1em;
+    text-shadow: none;
+}
+.loginErrorText{
+    color: red;
+    font-family: "VT23";
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 10%
+}
+#loginButton{
+    background-color: black;
+    border: solid white 1px;
+    margin-bottom: 10%;
+    width: 81%;
+    margin-left: 10%;
+    transition: 0.2 ease-out;
+}
+#loginButton:hover{
+    background-color: white;
+    color: black;
+    border: solid black 1px;
+    transition: 0.2s ease-in;
+}
+.registerLinkWrapper{
+    display: flex;
+    justify-content: end;
+}
+#registerLink{
+    transition: 0.2s ease-in-out;
+}
+#registerLink:hover{
+    transition: 0.2s ease-in-out;
+    color: lime;
+}
+/* Styling for Registration Page */
+.registerBody{
+    display: flex;
+}
+.registerImageBox{
+    width: 45%;
+}
+.registerImageBox-item{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 23%;
+}
+.registerForm{
+    background-color: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    border: solid white 1px;
+    width: 50%;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+#registrationTitle{
+    margin-left: 5%;
+}
+.inputBlock{
+    width: 90%;
+    margin-top: 2.5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.inputRow{
+    display: flex;
+    width: 100%;
+}
+.registration-icon{
+    width: 180px;
+    height: 42px;
+    background-color: transparent;
+    border: solid 1px white;
+    text-align: center;
+    line-height: 48px;
+    color: white
+}
+.registrationInput{
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    border: solid 1px white;
+    user-select: none;
+    transition: all 0.1s ease-in;
+    transition: 0.3s border ease-in-out;
+}
+
+.registrationInput:focus{
+    outline: none;
+}
+.registrationInput.terminal-text{
+    font-size: 1.2em;
+    text-shadow: none;
+}
+.registerButton{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    width: 90%;
+    height: 100px;
+    line-height: 100px;
+    background-color: black;
+    border: solid 1px white;
+    transition: 0.2s ease-in-out;
+    text-align: center;
+    user-select: none;
+}
+.registerButton:hover{
+    background-color: white;
+    border: solid 1px black;
+    color: black;
+    transition: 0.2s ease-in-out;
+}
+.registerButton.locked{
+    background-color: gray;
+}
+.registerError{
+    border: dashed red 1px;
+    box-shadow: 0 0 3.5px 3.5px rgb(255, 0, 0);
+}
+.registerErrorText{
+    color: red;
+    font-family: "VT23";
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.registerErrorText.tabbed{
+    margin-left: 5%;
+}
+#loginLink{
+    margin-left: 5%;
+    transition: 0.2s ease-in-out;
+}
+#loginLink:hover{
+    color: lime;
+    transition: 0.2s ease-in-out;
+}
+/* Styling for leaderboard */
+.rankingTitle{
+    margin-left: 20%;
+    margin-top: 2.5%;
+    background-color: black;
+    width: fit-content;
+}
+.rankingContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.75);
+    height: 100vh;
+    margin-left: 20%;
+    margin-right: 20%;
+    overflow-y: auto;
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    border: solid 1px white;
+    backdrop-filter: blur(15px);
+}
+.rankingCard{
+    display: flex;
+    color: lime;    
+    border: solid 1px lime;
+    width: 99%;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.rankingProfile{
+    font-family: "Nasalization";
+    margin-left: 1%;
+    border: solid 1px lime;
+    border-radius: 50% 50%;
+    height: 75px;
+    width: 75px;
+    text-align: center;
+    line-height: 75px;
+    background-color: white;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 50px;
+    user-select: none;
+}
+.userDetails{
+    font-family: "VT23";
+    font-size: 48px;
+    margin-left: 5%;
+    height: 75px;
+    line-height: 75px;
+    width: 65%;
+}
+.score{
+    font-family: "VT23";
+    font-size: 48px;
+    height: 75px;
+    line-height: 75px;
+    width: 15%;
+}
+.position{
+    font-family: "Nasalization";
+    font-size: 50px;
+    line-height: 75px;
+}
+.rankUnavailable{
+    display: inline-block;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Nasalization";
+    font-size: 1.5em;
+    color: lime;
+    text-shadow: 0 0 0.05em lime;
+}
+.buttonBar{
+    display: flex;
+    margin-left: 20%;
+    margin-bottom: 5%;
+}
+.sort{
+    transition: 0.2s ease-in-out;
+    font-family: "Nasalization";
+    user-select: none;
+}
+.sort:hover{
+    background-color: white;
+    color: black;
+    border: solid 1px black;
+    transition: 0.2s ease-in-out;
+}
+/* Styling for profile page */
+body.profile{
+    min-height: 100vh;
+    height: 100vh;
+}
+.profileSection{
+    border: solid 1px white;
+    background-color: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    margin-top: 2%;
+    margin-bottom: 5%;
+    width: 75%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#profile-username{
+    font-family: "Nasalization";
+    color: white;
+    margin-left: 5%;
+    margin-top: 2%;
+    text-decoration: underline;
+}
+.profileStatus{
+    background-color: black;
+    color: white;
+    display: flex;
+    width: 90%;
+    border: solid 1px white;
+    margin-top: 2.5%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Nasalization";
+    height: 70%;
+}
+.generalInformation{
+    border-right: solid 1px white;
+    width: 49%;
+}
+.gameInformation{
+    width: 49%;
+}
+.profileStatusItem{
+    margin-top: 1.5%;
+}
+/* Media Queries to ensure proper formatting on various screen sizes */
+@media screen and (max-width: 1000px){
+    /* fonts */
+    .title-text{
+        font-size: 1.2em;
+    }
+    /* text */
+    .paragraph-text{
+        font-size: 0.7em;
+    }
+    /* Navbar */
+    .navButton{
+        width: 27.5px;
+        height: 20px;
+        line-height: 20px;
+        top: -5px;
+    }
+    .navProfile{
+        width: 75px;
+        font-size: 0.4em;
+    }
+    #whiteRect{
+        height: 5px;
+    }
+    .navButton.nav-text{
+        font-size: 0.4em;
+    }
+    body.home{
+        min-height: 150vh;
+    }
+    /* Home Page */
+    /* Game Page */
+    .how-to-play div.key{
+        font-size: 1.2em;
+        width: 25px;
+        height: 25px;
+        line-height: 1.2em;
+    }
+    #mouse{
+        height: 25px;
+    }
+    #space{
+        width: 131px;
+        height: 25px;
+        font-size: 1.2em;
+        line-height: 1.2em;
+    }
+    .postButton{
+        font-size: 0.5em
+    }
+    .commentBar{
+        font-size: 0.8em;
+    }
+    .comment{
+        font-size: 0.8em;
+    }
+    /* Styling for login page */
+    .buttonHeader{
+        font-size: 0.6em;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        overflow-x: hidden;
+        user-select: none;
+    }
+    body.login{
+        min-height: 100vh;
+    }
+    .loginForm{
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    /* Styling for register page */
+    body.registration{
+        min-height: 100vh;
+    }
+    .registrationInput{
+        width: 100%;
+    }
+    .registrationInput.dob{
+        width: 40%;
+    }
+    .registrationInput.email{
+        width: 100%;
+    }
+    /* Styling for leaderboard */
+    .rankingProfile{
+        height: 37.5px;
+        width: 37.5px;
+        font-size: 30px;
+        line-height: 37.5px;
+    }
+    .userDetails{
+        font-size: 24px;
+        width: 30%;
+    }
+    .score{
+        font-size: 24px;
+        width: 30%;
+    }
+    .position{
+        font-size: 24px;
+    }
+    .rankUnavailable{
+        font-size: 0.6em;
+    }
+}

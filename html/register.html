@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" text="text/css" href="../css/stylesheet.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="../javascript/nav.js"></script>
+    <script src="../javascript/footer.js"></script>
+    <script src="../javascript/register.js"></script>
+    <title>Trig - Register</title>
+</head>
+    <body class="registration">
+        <!-- Navbar made with nav.js -->
+        <div class="mainSection register backgroundImg">
+            <!-- section to take relevant information needed to register a user -->
+            <!-- register.js performs checks on the validity of data and whether or not it should be stored in storage -->
+            <div class="registerBody">
+                <div class="registerForm">
+                    <div id="registrationTitle" class="title-text">Registration</div>
+                    <div class="inputBlock">
+                        <div class="inputRow">
+                            <div class="registration-icon">
+                                <span class="material-icons md-24">person</span>
+                            </div>
+                            <input class="registrationInput uname terminal-text" type="text" placeholder="Username">
+                        </div>
+                        <p class="registerErrorText"></p>
+                        <div class="inputRow">
+                            <div class="registration-icon">
+                                <span class="material-icons md-24">person</span>
+                            </div>
+                            <input class="registrationInput fname terminal-text" type="text" placeholder="First Name">
+                        </div>
+                        <p class="registerErrorText"></p>
+                        <div class="inputRow">
+                            <div class="registration-icon">
+                                <span class="material-icons md-24">person</span>
+                            </div>
+                            <input class="registrationInput lname terminal-text" type="text" placeholder="Last Name">
+                        </div>
+                        <p class="registerErrorText"></p>
+                        <div class="inputRow">
+                            <div class="registration-icon">
+                                <span class="material-icons md-24">calendar_month</span>
+                            </div>
+                            <input class="registrationInput dob terminal-text" type="date">
+                        </div>
+                        <p class="registerErrorText"></p>
+                        <div class="inputRow">
+                            <div class="registration-icon">
+                                <span class="material-icons md-24">alternate_email</span>
+                            </div>
+                            <input class="registrationInput email terminal-text" type="email" placeholder="Email">
+                        </div>
+                        <p class="registerErrorText"></p>
+                        <div class="inputRow">
+                            <div class="registration-icon">
+                                <span class="material-icons md-24">alternate_email</span>
+                            </div>
+                            <input class="registrationInput confirmEmail terminal-text" type="text" placeholder="Confirm Email">
+                        </div>
+                        <p class="registerErrorText"></p>
+                        <div class="inputRow">
+                            <div class="registration-icon">
+                                <span class="material-icons md-24">lock</span>
+                            </div>
+                            <input class="registrationInput password terminal-text" type="password" placeholder="Password">
+                        </div>
+                        <p class="registerErrorText"></p>
+                        <div class="inputRow">
+                            <div class="registration-icon">
+                                <span class="material-icons md-24">lock</span>
+                            </div>
+                            <input class="registrationInput confirmPassword terminal-text" type="password" placeholder="Confirm Password">
+                        </div>
+                        <p class="registerErrorText"></p>
+                    </div>  
+                    <div class="registerButton title-text">Create Account</div>  
+                    <p class="registerErrorText tabbed"></p>
+                    <a id="loginLink" class="paragraph-text" href="login.html">Already have an account? Login Here</a>
+                    
+                </div>
+                <div class="registerImageBox">
+                    <img src="../image/registrationMsg.png" alt="Thank you for registering" class="registerImageBox-item">
+                </div>
+            </div>
+        <!-- Footer made with footer.js -->
+    </body>
+</html>

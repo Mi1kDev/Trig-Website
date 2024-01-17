@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" text="text/css" href="../css/stylesheet.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="../javascript/nav.js"></script>
+    <script src="../javascript/footer.js"></script>
+    <script src="../javascript/login.js"></script>
+    <title>Trig - Login</title>
+</head>
+    <body class="login">
+        <!-- Navbar made with nav.js -->
+        <div class="mainSection login backgroundImg">
+            <div class="loginForm">
+                <div class="inputForms">
+                    <div class="loginUsername">
+                        <div class="buttonHeader">
+                            <span class="material-icons md-24">person</span>
+                        </div>
+                        <input id="usernameInput" class="dataInput terminal-text" type="text" placeholder="Enter Username"></div>
+                    </div>
+                    <p class="user loginErrorText"></p>
+                    <div class="loginPassword">
+                        <div class="buttonHeader">
+                            <span class="material-icons md-24">lock</span>
+                        </div>
+                        <input id="passwordInput" class="dataInput terminal-text" type="password" placeholder="Enter Password">
+                    </div>
+                    <p class="pwd loginErrorText"></p>
+                    <button id="loginButton" class="title-text" onclick="login()">
+                        Login
+                    </button>
+                    <div class="registerLinkWrapper">
+                        <!-- link to the register page in case the user does not have an account -->
+                        <a id="registerLink" class="paragraph-text" href="register.html">Not a member? Sign up here!</a>
+                    </div>
+                </div>
+            </div>
+        </div>  
+         <!--Footer made with footer.js  -->
+    </body> 
+</html>

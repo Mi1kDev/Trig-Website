@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" text="text/css" href="../css/stylesheet.css"/>
+    <script src="../javascript/nav.js"></script>
+    <script src="../javascript/comment.js"></script>
+    <script src="../javascript/footer.js"></script>
+    <script src="../javascript/game.js" type="module"></script>
+    <title>Trig - Game</title>
+</head>
+<body>
+    <!-- Navbar made with nav.js -->
+    <div class="mainSection gamePage">
+        <!-- Sprites used by the page -->
+        <img id="player" class="sprite-hidden" src="../sprites/Player.png">
+        <img id="square" class="sprite-hidden" src="../sprites/Square.png">
+        <img id="circle" class="sprite-hidden" src="../sprites/Circle.png">
+        <img id="kite" class="sprite-hidden" src="../sprites//Kite.png">
+        <img id="trapezoid" class="sprite-hidden" src="../sprites/Trapezoid.png">
+        <img id="pause" class="sprite-hidden" src="../sprites/Pause.png">
+        <img id="danger" class="sprite-hidden" src="../sprites/Danger.png">
+        <img id="dangerAlt" class="sprite-hidden" src="../sprites/Danger Alt.png">
+        <img id="background" class="sprite-hidden" src="../sprites/Background.png">
+        <div class="gamePanel">
+            <canvas id="game" tabindex="1"></canvas>
+            <div class="game-menu-manager"></div>
+        </div>
+        <div class="gameSection">            
+            <div class="descriptionContent">
+                <!-- description and how to play the game -->
+                <p class="paragraph-text">
+                    Trig is a top-down 2D shooter where the player controls a triangle and combats incoming hordes of enemies.
+                    <br><br>
+                    The goal is to survive for as long as possible against the enemies, defeating as many as possible along the way in order to achieve as high a score as possible.
+                    <br><br>
+                    As time goes on enemies will spawn at an increased rate, more will spawn at once and eventually newer more troublesome enemy types will be introduced.
+                    <br><br>
+                    Can you survive against the ever growing hordes of polygons seeking to destroy you?
+                </p>
+            </div>
+            <!-- section dictaticing the various game controls -->
+            <div id="gameControls">  
+                <div class="how-to-play">
+                    <div class="key" id="w">W</div>
+                    <div class="key" id="a">A</div>
+                    <div class="key" id="s">S</div>
+                    <div class="key" id="d">D</div>
+                    <img id="mouse" src="../image/mouse.png" alt="vector-computer-mouse">
+                </div>
+                <div id="space">SPACE</div>
+            </div> 
+        </div>
+        <!-- section allows users to write comments and view previous comments -->
+        <div class="commentSection">
+            <h2 class="title-text">Comments</h2>
+            <div id="commentArea">
+                <!-- comment.js file is used to save comments to local storage -->
+                <textarea class="commentBar" placeholder="Write your comment here..."></textarea>
+                <div id="commentPost" class="postButton button">Post</div>
+            </div>
+            <!-- comment.js is used to read data stored in local storage and present them as comments here -->
+            <div id="loadedComments">
+            </div>
+        </div>
+    </div>   
+    <!-- Footer.js used to make navbar -->
+</body>
+</html>
